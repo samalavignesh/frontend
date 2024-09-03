@@ -18,7 +18,7 @@ import axios from 'axios'
           event.preventDefault();
           setErrors(Validation(values));
           if(errors.name==="" && errors.email==="" && errors.password===""){
-            axios.post('http://localhost:8081/signup',values)
+            axios.post('http://localhost:8081/samsql',values)
             .then(res=>{
                 navigate('/');
             })
