@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Validation from './LoginValidation';
 import axios from 'axios'
+import backgroundImage from './sam.jpg';
+
 function Login() {
     const [values,setValues] = useState({
       email:'',
@@ -16,7 +18,7 @@ const handleInput=(event)=>{
         event.preventDefault();
         setErrors(Validation(values));
         if(errors.email==="" && errors.password===""){
-            axios.post('http://localhost:8081/samsql',values)
+            axios.post('http://localhost:8081/sams',values)
             .then(res=>{
                 if(res.data==="Success"){
                 navigate('/home');}
@@ -28,11 +30,13 @@ const handleInput=(event)=>{
           }
     }
   return (
-    <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
+    <div className='d-flex justify-content-center align-items-end vh-100'
+    style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className='bg-white p-3 rounded w-25'>
             <form action="" onSubmit={handleSubmit}>
                 <h2>
-                    Log-In
+                  <center> Log-In</center>
+                   
                 </h2>
                 <div className='mb-3'>
                     <label htmlFor="email"><strong>Email</strong></label>

@@ -2,6 +2,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import Validation from './SignUpValidation'
 import axios from 'axios'
+import backgroundImage from './sam1.jpg';
  function Signup() {
 
     const [values,setValues] = useState({
@@ -26,8 +27,9 @@ import axios from 'axios'
           }
       }
    return (
-    <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
-    <div className='bg-white p-3 rounded w-25'>
+    <div className='d-flex justify-content-center align-items-end vh-100'
+    style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+         <div className='bg-white p-3 rounded w-25'>
         <form action="" onSubmit={handleSubmit}>
             <h2>
                 Sign-Up
