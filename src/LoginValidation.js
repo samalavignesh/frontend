@@ -1,9 +1,9 @@
 function Validation(values){
     let error={}
     const e_pat=/^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const p_pat=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
+    const p_pat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if(values.email===""){
-        error.email="Name should not be empty"
+        error.email="Email should not be empty"
     }
     else if(!e_pat.test(values.email)){
         error.email="Email didn't match"
